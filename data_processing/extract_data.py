@@ -5,7 +5,7 @@ import time
 import signal 
 import json
 import re
-import sentencepiece as spm
+#import sentencepiece as spm
 import numpy as np
 from collections import OrderedDict
 from pathos import multiprocessing
@@ -619,25 +619,25 @@ def parse_args():
     parser.add_argument(
         "--sub_vocab_file",
         type=str,
-        default="/data4/liufang/GTNM/data_processing/sub_token_w2id.txt",
+        default="sub_token_w2id.txt",
         help="Path to sub word vocabulary file",
     )
     parser.add_argument(
         "--doc_vocab_file",
         type=str,
-        default="/data4/liufang/GTNM/data_processing/doc_w2id.txt",
+        default="doc_w2id.txt",
         help="Path to documentation vocabulary file",
     )
     parser.add_argument(
         "--input_file_name",
         type=str, 
-        default="/data4/liufang/GTNM/small-raw/java-small-train_all.pkl",
+        default="../data-small/raw/java-small-test_all.pkl",
         help="Input file name",
     )
     parser.add_argument(
         "--output_file_name",
         type=str,
-        default="/data4/liufang/GTNM/small-raw/saved/train",
+        default="../data-small/raw/saved/test",
         help="Output file name",
     )
     parser.add_argument(

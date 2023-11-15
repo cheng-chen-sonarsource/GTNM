@@ -18,12 +18,13 @@ Language.build_library(
 
   # Include one or more languages
   [
-    'tree-sitter-java',
+    '../tree-sitter-java',
   ]
 )
 
 JAVAPARSER = Parser()
-JAVAPARSER.set_language(Language("my-languages.so", "java"))
+assert os.path.isfile("my-languages.so")
+JAVAPARSER.set_language(Language("/home/cheng.chen/Projects/GTNM/data_processing/my-languages.so", "java"))
 jp = JavaParser(parser=JAVAPARSER)
 
 PARSER = None
@@ -161,11 +162,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Processor.')
     parser.add_argument("--language", type=str, default="java",
                         help="language")
-    parser.add_argument("--input_file", type=str, default="/data4/liufang/GTNM/small-raw/java-small-test.pkl",
+    parser.add_argument("--input_file", type=str, default="../data-small/raw/java-small-eval.pkl",
                         help="the input file name")
-    parser.add_argument("--schema_file", type=str, default="/data4/liufang/GTNM/small-raw/java-small-test_schema.pkl",
+    parser.add_argument("--schema_file", type=str, default="../data-small/raw/java-small-eval_schema.pkl",
                         help="the output file name")
-    parser.add_argument("--output_file", type=str, default="/data4/liufang/GTNM/small-raw/java-small-test_all.pkl",
+    parser.add_argument("--output_file", type=str, default="../data-small/raw/java-small-eval_all.pkl",
                         help="the output file name")
     args = parser.parse_args()
     

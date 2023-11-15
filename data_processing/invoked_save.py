@@ -1,3 +1,4 @@
+import json
 import pickle
 import os
 from tqdm import tqdm
@@ -18,5 +19,6 @@ def extract_invoked_data(data_path, prefix):
                 invoked_data.append(0)
         invoked.append(invoked_data)
     pickle.dump(invoked, open(os.path.join(data_path, prefix+'_invoked.pkl'), "wb"))
+    json.dump(invoked, open(os.path.join(data_path, prefix + '_invoked.json'), "w"))
 
-extract_invoked_data('/data4/liufang/GTNM/', 'train_subword')
+extract_invoked_data('../data-small/raw/saved', 'train')

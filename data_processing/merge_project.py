@@ -47,6 +47,6 @@ if __name__ == "__main__":
     projects = os.listdir(os.path.join(args.data_path, "test"))
     for project_name in tqdm(projects):
         test_data.append(get_project_data(os.path.join(args.data_path, "test", project_name)))
-    pickle.dump(train_data, open(args.save_path+'java-small-train.pkl', "wb"))
-    pickle.dump(eval_data, open(args.save_path+'java-small-eval.pkl', "wb"))
-    pickle.dump(test_data, open(args.save_path+'java-small-test.pkl', "wb"))
+    pickle.dump(train_data, open(args.save_path+'/java-small-train.pkl', "wb"))
+    pickle.dump(eval_data, open(args.save_path+'/java-small-eval.pkl', "wb"))
+    pickle.dump(test_data, open(args.save_path+'/java-small-test.pkl', "wb"))
